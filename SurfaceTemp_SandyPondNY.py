@@ -281,7 +281,7 @@ if (Console == True):
 
 #   -------------- Making a Data Table --------------
 
-time = (ee.Date(image.get('system:time_start')).format('HH MM ss')).getInfo()
+time = (ee.Date(image.get('system:time_start')).format('HH mm ss')).getInfo()
 
 print('Data Table:')
 
