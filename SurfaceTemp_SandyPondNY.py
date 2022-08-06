@@ -2,30 +2,27 @@ import ee
 from ee_plugin import Map
 from tabulate import tabulate
 
- #
- # Author:         Gabriel Peters, ugrad (ggp2366@rit.edu)
- # Latest Version: 0.1.3
- # Affiliation:    CIS, Rochester Institute of Technology
- #
+'''
+    Author:         Gabriel Peters, ugrad (ggp2366@rit.edu)
+    Latest Version: 0.2.2 (8/6/22)
+    Affiliation:    CIS, Rochester Institute of Technology
+ 
+'''
 
+#  ------------------- READ ME ------------------
 
-#     ------------------- READ ME ------------------
-
-{
-#*
- #  Important info:
- #  1. This code is designed to provide estimated surface temperature data
- #     from Landsat 9 Level 2 data, for a specific set of manually selected
- #     coordinates 
- #  2. Verbose settings are utilized to make the output easy to understand.
- #     To see fine details set these settings to "True"
- #  3. In order to run you need to install the tabulate package. To do this,
- #     type the following commands into the QGIS command line and then restart QGIS
- #             import pip
- #             pip.main(['install', 'tabulate'])
- #
- #
-}
+'''
+ Important info:
+    1. This code is designed to provide estimated surface temperature data
+       from Landsat 9 Level 2 data, for a specific set of manually selected
+       coordinates 
+    2. Verbose settings are utilized to make the output easy to understand.
+       To see fine details set these settings to "True"
+    3. In order to run you need to install the tabulate package. To do this,
+       type the following commands into the QGIS command line and then restart QGIS
+              import pip
+              pip.main(['install', 'tabulate'])
+'''
 
 # Verbose settings:
 
@@ -98,15 +95,7 @@ imageCollection = ee.ImageCollection("LANDSAT/LC09/C02/T1_L2") \
 
 print('Filtered Over Region: ', imageCollection.size().getInfo())
 
-if (Verbose == True):
-  Map.addLayer(
-    Landsat9_C2_T1_L2,
-    {'min':0, 'max':65535, 'bands':['ST_B10']},
-    'Cloud Filter'
-  )
-
-
-#  setting image variable:
+# setting image variable:
 #image = ee.Image( INSERT PRODUCT ID );        # get specific image
 image = ee.Image(imageCollection.first())
 
@@ -125,6 +114,11 @@ if (Verbose == True):
       image,
       {'min':0, 'max':65535, 'bands':['ST_B10']},
       'ST_B10'
+    )
+    Map.addLayer(               # adding map layer for true color
+      image,
+      {'min':0, 'max':20000, 'bands':['SR_B4', 'SR_B3', 'SR_B2']},
+      'True Color'
     )
 
 #   ------------ Extracting Pixel Values ------------
