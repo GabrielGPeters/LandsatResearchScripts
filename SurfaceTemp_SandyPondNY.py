@@ -3,8 +3,9 @@ from ee_plugin import Map
 from tabulate import tabulate
 
 '''
+ 
     Author:         Gabriel Peters, ugrad (ggp2366@rit.edu)
-    Latest Version: 0.2.2 (8/6/22)
+    Latest Version: 0.2.1 (8/6/22)
     Affiliation:    CIS, Rochester Institute of Technology
  
 '''
@@ -95,7 +96,7 @@ imageCollection = ee.ImageCollection("LANDSAT/LC09/C02/T1_L2") \
 
 print('Filtered Over Region: ', imageCollection.size().getInfo())
 
-# setting image variable:
+#  setting image variable:
 #image = ee.Image( INSERT PRODUCT ID );        # get specific image
 image = ee.Image(imageCollection.first())
 
@@ -286,12 +287,12 @@ time = (ee.Date(image.get('system:time_start')).format('HH mm ss')).getInfo()
 print('Data Table:')
 
 dataTable = [
-  ['TidbiT', 'Location (Sandy Pond)', 'Pixel Value', 'Kelvin (K)', 'Fahrenheit (F)', '(year-month-day hour-minute-second)'],
-  ['#1148', '(-76.1646402, 43.6596454)', dataN, surfTemp, surfTempF, date + ' ' + time],
-  ['#5977', '(-76.1776992, 43.6428234)', dataN2, surfTemp2, surfTempF2, date + ' ' + time],
-  ['#5967', '(-76.1669502, 43.6500498)', dataN3, surfTemp3, surfTempF3, date + ' ' + time],
-  ['#3512', '(-76.1839152, 43.6623287)', dataN4, surfTemp4, surfTempF4, date + ' ' + time],
-  ['#3515', '(-76.1880032, 43.6675437)', dataN5, surfTemp5, surfTempF5, date + ' ' + time],
+  ['TidbiT  ', 'Location (Sandy Pond)', 'Pixel Value', 'Kelvin (K)', 'Fahrenheit (F)', '(year-month-day hour-minute-second)'],
+  ['#1148', '(-76.1646402, 43.6596454)', dataN, round(surfTemp, 3), round(surfTempF, 3), date + ' ' + time],
+  ['#5977', '(-76.1776992, 43.6428234)', dataN2, round(surfTemp2, 3), round(surfTempF2, 3), date + ' ' + time],
+  ['#5967', '(-76.1669502, 43.6500498)', dataN3, round(surfTemp3, 3), round(surfTempF3, 3), date + ' ' + time],
+  ['#3512', '(-76.1839152, 43.6623287)', dataN4, round(surfTemp4, 3), round(surfTempF4, 3), date + ' ' + time],
+  ['#3515', '(-76.1880032, 43.6675437)', dataN5, round(surfTemp5, 3), round(surfTempF5, 3), date + ' ' + time],
 ]
 
 #chart = ui.Chart(dataTable).setChartType('Table')
