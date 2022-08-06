@@ -2,12 +2,10 @@ import ee
 from ee_plugin import Map
 from tabulate import tabulate
 
-#*
  #
  # Author:         Gabriel Peters, ugrad (ggp2366@rit.edu)
  # Latest Version: 0.1.3
  # Affiliation:    CIS, Rochester Institute of Technology
- #
  #
 
 
