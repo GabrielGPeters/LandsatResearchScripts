@@ -39,7 +39,7 @@ Console = False
 point1 = ee.Geometry.Point([-76.1646402, 43.6596454]) # #1148
 point2 = ee.Geometry.Point([-76.1776992, 43.6428234]) # #5977
 point3 = ee.Geometry.Point([-76.1669502, 43.6500498]) # #5967
-point4 = ee.Geometry.Point([-76.1839152, 43.6623287]) # #3512
+point4 = ee.Geometry.Point([-76.1839152, 43.6623287]) # #3513
 point5 = ee.Geometry.Point([-76.1880032, 43.6675437]) # #3515
 
 # Print the result to the console.
@@ -291,7 +291,7 @@ dataTable = [
   ['#1148', '(-76.1646402, 43.6596454)', dataN, round(surfTemp, 3), round(surfTempF, 3), date + ' ' + time],
   ['#5977', '(-76.1776992, 43.6428234)', dataN2, round(surfTemp2, 3), round(surfTempF2, 3), date + ' ' + time],
   ['#5967', '(-76.1669502, 43.6500498)', dataN3, round(surfTemp3, 3), round(surfTempF3, 3), date + ' ' + time],
-  ['#3512', '(-76.1839152, 43.6623287)', dataN4, round(surfTemp4, 3), round(surfTempF4, 3), date + ' ' + time],
+  ['#3513', '(-76.1839152, 43.6623287)', dataN4, round(surfTemp4, 3), round(surfTempF4, 3), date + ' ' + time],
   ['#3515', '(-76.1880032, 43.6675437)', dataN5, round(surfTemp5, 3), round(surfTempF5, 3), date + ' ' + time],
 ]
 
