@@ -3,15 +3,15 @@
 # Affiliation:   CIS, Rochester Institute of Technology
 
 import matplotlib.pyplot as plt
-from google.colab import drive
-import os
+#from google.colab import drive
+#import os
 import numpy as np
 
 # mounting drive
-drive.mount('/content/drive', force_remount=True)
+#drive.mount('/content/drive', force_remount=True)
 
 # changing the directory to the file location
-os.chdir('/content/drive/MyDrive/TidBitData')
+#os.chdir('/content/drive/MyDrive/TidBitData')
 
 # installing table tool (separate)
 pip install tabulate
